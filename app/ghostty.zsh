@@ -5,7 +5,3 @@ if [[ ! -e "$config_file" && ! -L "$config_file" ]]; then
   mkdir -p "$config_dir"
   ln -s "${${(%):-%x}:A:h}/config/ghostty.conf" "$config_file"
 fi
-
-function unconfigure-ghostty() {
-  rm -rf "$config_dir"
-}

@@ -1,16 +1,16 @@
 # Disk usage helpers
-du-free() {
+skit.du.free() {
   df -h /
 }
 
-du-usage() {
+skit.du.usage() {
   local dir="${1:-.}"
   local depth="${2:-1}"
 
   du -xhd "$depth" "$dir" 2>/dev/null | sort -h
 }
 
-du-size() {
+skit.du.size() {
   local dir="${1:-.}"
   local size="${2:-500M}"
 
@@ -19,14 +19,14 @@ du-size() {
     sort -h
 }
 
-du-docker() {
+skit.du.docker() {
   docker system df
 }
 
-du-brew() {
+skit.du.brew() {
   du -sh "$(brew --cache)" 2>/dev/null
 }
 
-du-tm-snapshots() {
+skit.du.tm-snapshots() {
   tmutil listlocalsnapshots /
 }

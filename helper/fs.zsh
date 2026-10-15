@@ -1,5 +1,5 @@
 # Find files matching a pattern
-fs-ls() {
+skit.fs.ls() {
   local search_dir="${1:?Error: Specify a directory (e.g. / or ~/Library)}"
   local search_name="${2:?Error: Specify a pattern to find (e.g. '*nametofind*')}"
 
@@ -10,7 +10,7 @@ fs-ls() {
 
 
 # Delete files and directories matching a pattern (with an interactive safety prompt)
-fs-rm() {
+skit.fs.rm() {
 
   local skip_ls=false
   local args=()
